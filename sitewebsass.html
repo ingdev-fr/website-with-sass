@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+                    <!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency BEMM projet</title>
+    <link rel="stylesheet" href="siteweb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet"> <!-- ici je connecte une police google trouvée sur le site google font -->
+</head>
+
+                    <!-- BODY -->
+
+<body>
+    
+ <!-- SECTION HEADER -->   
+    <header>
+        <div class= "wrapper wrapper--logo"> <!-- je crée à l'intérieur de chaque section une div qui va permettre de centrer le contenu sur la page. Je lui donne une classe car on va pouvoir fixer les mêmes paramètres à l'intérieur de chaque section-->
+            <div class="title title--h1 ">Travel Agency <span class="logo-span">.</span></div> <!-- le point du titre logo est orange donc je crée une span qui l'entoure avec une classe car le point on le retrouve également à la fin du site.-->
+            <nav>
+                <ul class="barnav">
+                    <li class="barnav__part"><a href="#main-image" class="barnav__link barnav__link:hover barnav__link--active">Accueil</a></li>
+                    <li class="barnav__part"><a href="#steps" class="barnav__link barnav__link:hover">Destinations</a></li>
+                    <li class="barnav__part"><a href="#possibilities" class="barnav__link barnav__link:hover">Circuits</a></li>
+                    <li class="barnav__part"><a href="#contact" class="barnav__link barnav__link:hover">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+<!-- CREATION SECTION MAIN-IMAGE -->
+
+    <section class="main">
+        <div class="wrapper wrapper--main">
+            <h2 class="title title--h2 title--h2--main">Organisez votre <br><strong>voyage sur mesure</strong></h2>
+            <a href="#" class="button button--main button:hover">Par ici</a> <!-- on crée un lien que l'on va styler en bouton -->
+
+        </div>
+
+    </section>
+
+<!-- CREATION SECTION STEPS-->
+
+    <section class="wrapper wrapper--steps"> <!-- On va créer les 3 info cards à l'aide d'une liste ! -->
+            <div class="card">
+                <img src="images/steps-icon-1.png" alt="" class="card__img">
+                <h4 class="title title--h4 title--h4--steps ">Planifiez</h4>
+                 <p class="text text--steps">Confiez-nous vos rêves d'évasion : en famille ou entre amis, nous trouverons la formule qui comblera vos attentes.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/steps-icon-2.png" alt="" class="card__img">
+                <h4 class="title title--h4 title--h4--steps ">Organisez</h4>
+                <p class="text text--steps">Bénéficiez de l'expertise de nos spécialistes de chaque destination, ils vous accompagnent dans la réalisation de votre voyage.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/steps-icon-3.png" alt="" class="card__img">
+                <h4 class="title title--h4 title--h4--steps ">Voyagez</h4>
+                <p class="text text--steps">Nous nous chargeons d'assurer votre sécurité et de veiller à votre pleine sérénité tout au long de votre voyage.</p>
+            </div>
+
+    </section>
+
+<!-- CREATION SECTION POSS-->
+
+    <section class="poss">
+        <div  class="wrapper wrapper--poss">
+            <div class="article article--back1">
+                <div class="article__overlay">
+                    <h4 class="title title--h4 title--h4--poss">Partez en famille</h4>
+                    <p class="text text__poss">Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</p>
+                    <a href="#" class="button button--poss">Plus d'infos</a>
+                </div>
+            </div>
+            <div class="article article--back2">
+                <div class="article__overlay">
+                    <h4 class="title title--h4 title--h4--poss">Envie de s'évader</h4>
+                    <p class="text text__poss">Parfois un peu d'évasion serait le bienvenue et ferait le plus grand bien !</p>
+                    <a href="#" class="button button--poss">Plus d'infos</a>
+                </div>
+            </div>
+            
+        </div>
+       
+    </section>
+
+<!-- CREATION SECTION CONTACT -->
+
+    <section class="wrapper wrapper--contact">
+            <h1 class="title title--h1 title--h1--contact">Contactez-nous</h1>
+            <p class="text text--contact">Chez Travel Agency nous savons que voyager est une aventure humaine mais également un engagement financier important pour vous. C'est pourquoi nous mettons un point d'honneur à prendre en compte chacune de vos attentes pour vous aider dans la préparation de votre séjour, circuit ou voyage sur mesure.</p>
+            <form method="post" action="#" class="form" >
+                <p>
+                    <label for="champ1" class="form__label">Nom</label>
+                    <input type="text" name="champ1" id="champ1" class="form__input form__input--typetext" maxlength="50"
+                    placeholder="Votre nom" autofocus>
+
+                </p>
+                <p>
+                    <label for="champ2" class="form__label">Email</label>
+                    <input type="text" name="champ2" id="champ2" class="form__input form__input--typetext" maxlength="50"
+                    placeholder="Votre email">
+
+                </p>
+                <p>
+                    <input type="submit" value="OK" class="form__input form__input--typesubmit form__input:hover" >
+                </p>
+
+
+            </form>
+
+    </section>
+
+<!-- STRUCTURE DU FOOTER -->
+
+    <footer>
+        <div class="wrapper wrapper--logo">
+            <h1 class="title title--h1 title--h1--footer">Travel Agency <span class="logo-span">.</span></h1>
+            <p class="text text--footer">
+                Copyright@2021. Tous droits réservés.
+            </p>
+
+        </div>
+
+    </footer>
+    
+</body>
+</html>

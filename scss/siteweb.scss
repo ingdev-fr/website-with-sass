@@ -1,0 +1,337 @@
+/* BASES */
+
+/* je déclare des variables */
+    $border-color: #02b8dd;
+    $primary-color: #ff7a00;
+    $secondary-color: #b87536;
+    $third-color: #444444;
+
+/* je déclare des mixins */
+
+@mixin heading-shadow ($color:$primary-color ) {
+    text-shadow: 2px 2px 3px $color; /* la mixin comporte un argument color qui aura pour valeur par défaut la variable $primary-color */
+}
+  
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /* CADRES DE PAGE */
+
+.wrapper
+{
+    width: 940px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    &--logo{
+        height: 100px;
+        justify-content: space-between;
+    }
+    &--main{
+        height: 580px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+    &--steps{
+        height: 250px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    &--poss{
+        justify-content: space-evenly;
+    }
+    &--contact{
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 30px;
+    } 
+}
+
+    /* TITRES */
+
+.title 
+{
+    font-family: "crete round", Arial, Helvetica, sans-serif;
+    &--h1{
+        font-size: 40px;
+        @include heading-shadow; /* ici j'inclus ma mixin sur les ombres de titres, je ne précise pas la couleur donc c'est celle par défaut, donc la variable primary-color */
+        &--contact{
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            height: 70px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: $third-color;
+            border-bottom: 2px $border-color solid;
+            @include heading-shadow (purple); /* ici j'inclus ma mixin en précisant l'argument color, c'est la couleur violet définie qui s'affiche) */
+            } 
+        &--footer{
+            padding: 30px 0;
+            color: white;
+            font-size: 35px;
+            }
+        }
+           
+    &--h2
+        {
+        font-size: 30px; 
+        &--main{
+            font-size: 50px;
+            text-transform: uppercase;
+            color: $third-color;
+            font-weight: normal;
+            text-align: center;
+            }
+        }
+                   
+    &--h4
+        {
+        font-size: 20px;
+        &--steps{
+            text-transform: uppercase;
+            color: cadetblue;
+            margin-bottom: 30px;
+            }
+            
+        &--poss{
+            margin-top: 0;
+            padding-top: 60px;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid $third-color;
+            }
+        }
+                       
+}
+
+    /* TEXTES */
+
+.text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    &--steps{
+        text-align: center;
+        }
+
+    &--contact{
+        margin-bottom: 20px;
+        }   
+
+    &--footer{
+        color: white;
+        font-size: 12px;
+        }
+}
+
+    /* BOUTONS */
+
+.button
+{
+    display: block; /* Je passe le display en "block" pour lui donner une largeur et une hauteur. */ 
+    margin:0 auto;
+    background: $primary-color;
+    color: white;
+    text-align: center; /* on centre horizontalement le texte du bloc*/
+    text-decoration: none;
+    line-height: 50px; /* ici on centre verticalement le texte du bloc en donnant une valeur de hauteur de ligne équivalente à la hauteur du bloc conteneur du texte*/
+    border-radius: 3px;
+
+    &:hover{
+        background-color: $secondary-color;
+        }
+
+    &--main{
+        width: 120px;
+        height: 50px;
+        margin-top: 75px;
+        }
+
+    &--poss{
+        width: 90px;
+        height: 40px;
+        margin-top: 20px;
+        line-height: 40px; /* ici on centre verticalement le texte du bloc en donnant une valeur de hauteur de ligne équivalente à la hauteur du bloc conteneur du texte*/
+        }
+
+    &--contact{
+        width: 30px;
+        height: 25px;
+        margin-left: 4px;
+        border: 2px solid $border-color;
+        padding: 0 7px;
+        }
+}
+
+    /* LIENS */
+
+.link
+{
+    text-decoration: none;
+}
+
+    /* FORMULAIRES */
+
+.form
+{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+
+    &__label{
+        font-weight: 500;
+        font-size: 20px;
+        color: $third-color;
+        }
+
+    &__input{   
+        border: 2px solid $border-color;
+        height: 25px;
+        border-radius: 5px; 
+        outline: none; /* par défaut sur Mozilla il y a une outline bleu de 3px du champ sélectionné, je l'ai désactivée*/ 
+        &--typetext{
+            width: 180px;
+            margin-left: 4px;
+            padding-left: 10px;
+            }
+
+        &--typesubmit{
+            width: 40px;
+            background-color: $primary-color;
+            color: white;
+            cursor: pointer; /* pour transformer le curseur en main*/
+            }
+        &:hover{
+            background-color: $secondary-color;
+            }   
+        }     
+}
+
+    /* NAVIGATION */
+
+.barnav
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    &__part
+        {
+        list-style: none;
+        margin-right: 20px;
+        }
+    
+    &__link
+        {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        font-weight: bold;
+        &:hover
+            {
+            color: lighten($secondary-color, 10%); /* ici, grace à la fonction lighten de Sass, j'éclaircis de 10% la couleur secondaire pour le background hover du lien */
+            }
+        &--active
+            {
+            color: $primary-color;
+            }
+        }      
+}
+
+/* SPECIFIQUE */
+
+    /* HEADER */
+
+.logo-span
+{
+    color: $primary-color;
+}
+
+    /* SECTION MAIN */
+
+.main
+{
+    height: 580px;
+    background: url(images/main.jpg) no-repeat center; /* le center est pour centrer l'image sur son milieu*/
+}
+
+
+    /* SECTION STEPS*/
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &__img
+        { 
+        width: 100px;
+        margin-bottom: 30px;
+        }
+}
+
+
+
+/* POSSIBILITIES*/
+
+.poss
+{
+    height: 350px;
+    background-color: $third-color;
+    padding: 20px 0;
+}
+
+.article
+{
+    width: 450px;
+    height: 270px;
+    border-radius: 10px;
+    &--back1
+        {
+        background: url(images/article-image-1.jpg);
+        }
+
+    &--back2
+        {
+        background: url(images/article-image-2.jpg);
+        }
+
+    &__overlay
+        {
+        background-color: rgba(255, 255, 255, 0.95);
+        width: 50%;
+        height: 100%;
+        margin-top: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        border-radius: 10px 0 0 10px;
+        box-sizing: border-box;
+        }
+
+}
+
+/* SECTION CONTACT */
+
+/* FOOTER */
+
+footer
+{
+    height: 100px;
+    background-color: $third-color;
+}
